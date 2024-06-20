@@ -1,0 +1,107 @@
+ <!--Header = aici se afla meniul si titlul paginii-->
+ <script src="/Resurse/js/tema.js"></script>
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var themeSwitch = document.getElementById('theme-switch');
+        themeSwitch.addEventListener('change', function() {
+            var body = document.body;
+            var themeIcon = document.getElementById('theme-icon');
+            if (themeSwitch.checked) {
+                body.classList.add('dark');
+                themeIcon.src = '/Resurse/imagini/moon.png';
+            } else {
+                body.classList.remove('dark');
+                themeIcon.src = '/Resurse/imagini/sun.png';
+            }
+        });
+    });
+</script>
+
+
+ <header id="header">
+    <h1 id="site-name">Nixxie DrugStore</h1>
+    <ul>
+        <li>
+          <button class="btn btn-outline-primary theme" id="normaltheme">Normal</button>
+          <button class="btn btn-outline-dark theme" id="darktema">Dark</button>
+          <button class="btn btn-outline-info theme" id="bluetema">Blue</button>
+        </li>
+    </ul>
+    <nav>
+        <!--<label id="hamburger" for="ch-menu">
+            <img src="Resurse/imagini/hamburger.png"  alt="menu">
+        </label>-->
+        
+        <label class="hamburger" for="ch-menu">
+            <div id="hamb-top-line"></div>
+            <div id="hamb-mid-line"></div>
+            <div id="hamb-bot-line"></div>
+            </label>
+            <input id="ch-menu" type="checkbox">
+
+            <ul class="meniu">
+                <li>
+                    <div id="acasa"><a href= "/index"><i class="fa-solid fa-house"></i>Acasa</a></div>
+                    <div id="casuta"><i class="fa-solid fa-house"></i></div>
+                    <ul id="acasa_link">
+                        <li><a href="/index">Acasa top page</a></li>
+                        <li><a href="/index#noutati">Noutati</a></li>
+                        <li><a href="/index#reduceri">Reduceri si Promotii</a></li>  
+                        <li><a href="/index#vanzari">Top vanzari</a></li>
+                        <li><a href="/index#articole">Articole</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div><a href="/produse">Produse</a></div>
+                    <ul>
+                        <li><a href="/produse">Toate</a></li>
+                        <% for (let opt of locals.optiuniMeniu){ %>
+                            <li><a href="/produse?categorie_produse=<%= opt.unnest %>"><%= opt.unnest %></a></li>
+                        <% } %>
+                    </ul>
+                </li>
+            <li>
+                <div>Contact și servicii clienți</div>
+                <!-- <ul>                        
+                    <li><a href="#">Detalii locații</a></li>
+                    <li><a href="#">Formular de Contact</a></li>
+                    <li><a href="#">Întrebări frecvente</a></li>
+                    <li><a href="#">Politică retur și garanție</a></li>
+                </ul> -->
+                <ul>
+                    <li><a href = "/inregistrare">Inregistrare</a></li>
+                    <li><div><a href="/politica">Politica </a></div>
+                    <li><div><a href="/termeni">Termeni </a></div>
+                </ul>
+            </li>
+            
+            <!-- <li><div><a href="/inregistrare">Inregistrare</a></div></li> -->
+           <% if(locals.utilizator) { %>
+                    <li><div><%- locals.utilizator.username %></div>
+                        <ul>
+                            <li><a href="/profil">Profil</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                <% } %>
+            
+            <li>
+                <div>Despre noi</div>
+                <ul>
+                    <li><a href="#">Istorie</a></li>
+                    <li><a href="#">Echipa Nixxie</a></li>
+                    <li><a href="#">Evenimente</a></li>
+                    <li><a href="#">Inspo</a></li>
+                </ul>
+            
+            </li>
+        </ul>
+    </nav>
+
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="theme-switch">
+        <label class="form-check-label" for="theme-switch">
+            <img id="theme-icon" src="/Resurse/imagini/sun.png" alt="Tema curenta">
+        </label>
+    </div>
+</header>

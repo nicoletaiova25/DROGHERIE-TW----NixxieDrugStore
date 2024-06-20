@@ -1,0 +1,27 @@
+{
+  "name": "drogherie-tw",
+  "version": "1.0.0",
+  "description": "site web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "drogherie",
+    "online"
+  ],
+  "author": "Nicoleta Iova",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "formidable": "^3.5.1",
+    "node.js": "^0.0.1-security",
+    "nodemailer": "^6.9.13",
+    "pg": "^8.11.5",
+    "sass": "^1.74.1",
+    "sharp": "^0.33.3"
+  }
+}

@@ -1,0 +1,135 @@
+/*In acest fisier se va afla stilizarea meniului pentru ecran mare*/
+
+body {
+    --inaltime-meniu: 70px;
+    --latime-buton: 400px;
+    --culoare-meniu: black;
+    --culoare-meniu-selectat:#F5C7A9;
+    --latime-bord-meniu: 1px;
+    --main_color-meniu: white;
+  }
+
+  #hamburger,
+  #ch-menu {
+    display: none;
+  }
+
+  nav{
+    top: 0;
+  }
+
+  ul.meniu { /*aici pentru tot meniul*/
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    color: white;
+  }
+
+
+  ul.meniu > li { /*aici pentru lista li din ul al meniului*/
+    height: var(--inaltime-meniu);
+    overflow: hidden;
+    line-height: var(--inaltime-meniu);
+    vertical-align: middle;
+    border: var(--latime-bord-meniu) solid black;
+    width: var(--latime-buton);
+    text-align: center;
+    position: relative;
+  }
+
+  ul.meniu > li::before { /**/
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Pentru a centra */
+    width: 0;
+    height: 0;
+    background-color: silver; /* Culorea dreptunghiului transparent */
+    opacity: 0.5;
+    transition: width 1s ease, height 0.3s ease; /* Tranziție pentru lățime și înălțime */
+    z-index: 1;
+}
+
+ul.meniu > li:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+  ul.meniu > li:hover {
+    overflow: visible;
+  }
+
+  ul.meniu > li:hover ul {
+    animation-name: animatie_submeniu;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  ul.meniu li a {
+    display: block;
+    height: 100%;
+  }
+
+  ul.meniu li a:hover {
+    background-color: var(--culoare-meniu-selectat);
+  }
+
+  ul.meniu li div {
+    /*line-height: 1.2em;*/
+    color: var(--main_color);
+    overflow: hidden;
+    transition: 0.7s;
+    background-color: var(--culoare-meniu);
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--main_color);
+    text-decoration: none;
+  }
+
+  ul.meniu li div:hover {
+    background-color: var(--culoare-meniu-selectat);
+  }
+
+  ul.meniu ul {
+    list-style-type: none;
+    z-index: 10;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    transform: scale(0);
+    transform-origin: top left;
+    overflow: hidden;
+  }
+
+  ul.meniu ul li {
+    height: var(--inaltime-meniu);
+    border: var(--latime-bord-meniu) solid black;
+    width: var(--latime-buton);
+  }
+
+  ul.meniu a {
+    background-color: var(--culoare-meniu);
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--main_color);
+    text-decoration: none;
+  }
+
+  ul.meniu ul li:hover {
+    background-color: var(--culoare-meniu-selectat);
+    color: #000;
+    text-shadow: 0 0 3px black;
+}
+  
+  @keyframes animatie_submeniu {
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  #casuta {
+    display: none;
+  }

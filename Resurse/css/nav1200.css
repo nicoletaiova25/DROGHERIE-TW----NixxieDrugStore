@@ -1,0 +1,37 @@
+/*In acest fisier se vor face modificari pentru meniul de pe ecran mediu*/
+body {
+    --inaltime-meniu: 70px;
+    --button-width: 300px;
+}
+
+#hamburger,
+#ch-menu {
+  display: none;
+}
+
+
+ul.meniu { /*aici pentru tot meniul*/
+ font-size: 12px;
+}
+
+ul.meniu>li{
+  width: var(--button-width);
+}
+
+ul.meniu ul li {
+  width: var(--button-width);
+}
+
+ul.meniu > li:hover {
+  overflow: visible;
+  width: var(--button-width);
+  text-align: center;
+}
+
+#casuta{
+    display: block;
+}
+
+#acasa{
+    display: none;
+}

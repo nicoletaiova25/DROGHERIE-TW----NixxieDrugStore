@@ -1,0 +1,123 @@
+body{
+    background-color: white;
+}
+
+img{ /*am ascuns imaginile*/
+    display: none;
+}
+
+iframe{ /*am ascuns videoclipurile*/
+    display: none;
+}
+
+figcaption{/*am asscuns captions de la elemente media*/
+    display: none;
+}
+
+.link-top{ /*am ascuns butonul de top*/
+    display: none;
+}
+
+#grid-pagina {
+    grid-gap:1px;
+    display: block;
+    /*afisate pe rand pe o singura coloana in ordinea din html*/
+}
+
+a{ /*linkurile se vor afisa ca text normal, fara sa fie subliniate*/
+    text-decoration: none;
+    color: black;
+}
+
+h1{
+    color:black;
+    font-size: 15px;
+    /*page-break-after: always;*/
+    margin-top: 10px;
+    text-align: center;
+}
+
+ul.meniu {
+    list-style-type:circle; /* Eliminare stiluri implicite ale listei */
+    padding: 0; /* Eliminare padding */
+    margin: 0; /* Eliminare margin */
+  }
+  
+  ul.meniu li {
+    margin-bottom: 10px; /* Spațiu între elementele listei */
+  }
+  
+  ul.meniu li a {
+    text-decoration: none; /* Eliminare subliniere linkuri */
+    color: black; /* Culoare text */
+    display: block; /* Facem linkurile să ocupe întreaga lățime */
+  }
+  
+  ul.meniu ul {
+    margin-top: 5px; /* Spațiu între meniu și submeniu */
+  }
+  
+  ul.meniu ul li {
+    margin-left: 20px; /* Spațiu de indentare pentru submeniu */
+  }
+
+nav{ /*dupa meniu se pune un page break*/
+    page-break-after: always;
+}
+
+footer{/*inainte de footer este un page break*/
+    page-break-before: always;
+
+}
+
+#icons{
+    display: none;
+}
+
+.container_iframe{
+    display: none;
+}
+
+/* Stilul pentru watermark */
+#watermark {
+    display: block;
+    position: fixed;
+    width: 60%; /* Lățimea watermark-ului */
+    height: 10%; /* Înălțimea watermark-ului */
+    top: 40%; /* Centrare verticală */
+    left: 40%; /* Centrare orizontală */
+    opacity: 0.3; /* Opacitate */
+    color: black; /* Culoarea textului */
+    font-size: 100px; /* Mărimea fontului */
+}
+
+/* Stil pentru banner */
+.banner-printare {
+    display: block;
+    position: absolute;
+    width: calc(50% - 2cm); /* Lățimea bannerului, luând în considerare lățimea conținutului paginii */
+    height: 30px;
+    top: 0; /* Aliniere sus */
+    right: 0; /* Aliniere dreapta */
+    background-color: white; /* Culoare fundal */
+    border: 2px double black; /* Bordură dublă neagră */
+    color: black; /* Culoare text */
+    text-align: center; /* Aliniere text */
+    z-index: 1000;
+  }
+
+details{
+    display: none;
+}
+
+/* Definirea marginilor pentru paginile din stânga și din dreapta */
+@page {
+    margin-left: 2cm;
+    margin-right: 1cm;
+  }
+
+  /* Pentru paginile din dreapta, inversăm marginile */
+@page:right {
+   margin-left: 1cm;
+   margin-right: 2cm;
+}

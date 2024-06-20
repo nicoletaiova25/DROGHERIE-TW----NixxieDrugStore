@@ -1,0 +1,95 @@
+<style>
+    /* styles.css */
+
+#banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 25vw; /* one-quarter of the viewport width */
+    height: 25vw; /* same as width for a square */
+    opacity: 0;
+    background-color: var(--highlight-color); /* Semi-transparent background */
+    color: white;
+    font-size: calc(1vw + 1em); /* responsive font size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-color: var(--pretty-border-color);
+    visibility: hidden;
+    transform: scale(0);
+    animation: banner-animation 5s forwards;
+}
+
+@keyframes banner-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+        background-color: transparent;
+    }
+    100% {
+        opacity: 0.75;
+        transform: scale(1);
+        background-color: var(--highlight-color);
+        visibility: visible;
+    }
+}
+
+/* Static banner for medium and small screens */
+@media (max-width: 768px) {
+    #banner {
+        animation: none;
+        opacity: 0.75;
+        visibility: visible;
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        left: 0;
+        font-size: 1em;
+    }
+}
+
+</style>
+
+<footer id="footer">
+    <div id="banner" class="banner-printare">
+        <p>Acesta este un proiect școlar! <button id="ok_cookies">Accepta cookies</button></p>
+      </div>
+    <address>
+        <a href="#" class="link-top">
+            <div class="triangle"></div>
+            <span class="tooltip">Top</span>
+          </a>
+    <address>
+        <p>
+            <i id="icons" class="fa-solid fa-phone "></i>
+            <a href="tel:+40786610007003">You can contact us Mobile phone</a>
+        </p>
+        <p>
+            <i id="icons" class="fa-sharp fa-solid fa-location-dot fa-beat-fade"></i>
+            <a href="https://www.google.com/maps/place/Facultatea+de+Matematic%C4%83+%C8%99i+Informatic%C4%83/@44.4355355,26.097398,17z/data=!3m1!4b1!4m5!3m4!1s0x40b1ff472f47f047:0x493984726f0235f9!8m2!3d44.4355355!4d26.0995867">Our location</a>
+        </p>
+    <p>
+        <i id="icons" class="fa-regular fa-envelope"></i>
+        <a href="mailto:nixxie.drugstore@gmail.com">Our Mail</a>
+    </p>
+    <p>
+        <i id="icons" class="fa-brands fa-whatsapp fa-beat-fade"></i>
+        <a href="https://wa.me/+40786610007003">Chat on Whatsapp</a>
+        </p>
+    </address>
+    <br/>
+    <!-- Buttons for deleting cookies -->
+    <button id="delete_cookies">Delete All Cookies</button>
+    <button id="delete_acceptat_banner_cookie">Delete 'acceptat_banner' Cookie</button>
+
+    <!-- Element to display the additional cookie information -->
+    <div id="ultima_pagina_accesata"></div><br>
+    <small>&copy;https://pixabay.com/</small>
+    <small>&copy;Canva</small>
+    <time datetime="2024-02-27">27 Februarie 2024</time>
+    </address>
+    <div id="watermark">Iova <br> Nicoleta</div>
+</footer>

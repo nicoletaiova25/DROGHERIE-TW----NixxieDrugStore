@@ -1,0 +1,133 @@
+// Variabilele pentru tema cromatică
+$main-color: white;
+$menu-color: black;
+$menu-selected-color: #F5C7A9;
+$menu-border-width: 1px;
+
+// Variabile pentru dimensiunile meniului
+$menu-height: 70px;
+$menu-button-width: 400px;
+
+// Selector pentru body pentru a utiliza variabilele definite
+body {
+  --inaltime-meniu: #{$menu-height};
+  --latime-buton: #{$menu-button-width};
+  --culoare-meniu: #{$menu-color};
+  --culoare-meniu-selectat: #{$menu-selected-color};
+  --latime-bord-meniu: #{$menu-border-width};
+  --main_color: #{$main-color};
+}
+
+// Mixin pentru stilurile comune ale butoanelor din meniu
+@mixin menu-button-styles {
+  height: var(--inaltime-meniu);
+  overflow: hidden;
+  line-height: var(--inaltime-meniu);
+  vertical-align: middle;
+  border: var(--latime-bord-meniu) solid var(--culoare-meniu);
+  width: var(--latime-buton);
+  text-align: center;
+  position: relative;
+}
+
+// Mixin pentru animația submeniului
+@mixin submenu-animation {
+  animation-name: animatie_submeniu;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+ul.meniu {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  color: white;
+
+  > li {
+    @include menu-button-styles;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      background-color: silver;
+      opacity: 0.5;
+      transition: width 1s ease, height 0.3s ease;
+      z-index: 1;
+    }
+
+    &:hover::before {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      overflow: visible;
+    }
+
+    &:hover ul {
+      @include submenu-animation;
+    }
+
+    a {
+      display: block;
+      height: 100%;
+
+      &:hover {
+        background-color: var(--culoare-meniu-selectat);
+      }
+    }
+
+    div {
+      color: var(--main_color);
+      overflow: hidden;
+      transition: 0.7s;
+      background-color: var(--culoare-meniu);
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+
+      &:hover {
+        background-color: var(--culoare-meniu-selectat);
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      z-index: 10;
+      position: relative;
+      padding: 0;
+      margin: 0;
+      transform: scale(0);
+      transform-origin: top left;
+      overflow: hidden;
+
+      li {
+        @include menu-button-styles;
+
+        &:hover {
+          background-color: var(--culoare-meniu-selectat);
+          color: #000;
+          text-shadow: 0 0 3px black;
+        }
+      }
+    }
+  }
+}
+
+@keyframes animatie_submeniu {
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+#casuta {
+  display: none;
+}

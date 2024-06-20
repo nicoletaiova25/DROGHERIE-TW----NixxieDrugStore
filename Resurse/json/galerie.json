@@ -1,0 +1,57 @@
+{
+	"cale_galerie":"Resurse/imagini/galerie",
+	"imagini": [
+		{
+			"fisier":"poza1.jpg",
+			"descriere":"noutate",
+			"sfert_ora":"1",
+			"autor":"fhknjd"
+		},
+		{
+			"fisier":"poza2.jpg",
+			"descriere":"noutate",
+			"sfert_ora":"2"
+			
+		},
+		{
+			"fisier":"poza3.jpg",
+			"descriere":"noutate",
+			"sfert_ora":"3"
+		},
+		{
+			"fisier":"poza4.png",
+			"descriere":"noutate",
+			"sfert_ora":"4"
+		},
+		{
+			"fisier":"poza5.png",
+			"descriere":"noutate",
+			"sfert_ora":"1"
+		},
+		{
+			"fisier":"poza6.jpg",
+			"descriere":"noutate",
+			"sfert_ora":"2"
+		},
+		{
+			"fisier":"poza7.png",
+			"descriere":"noutate",
+			"sfert_ora":"3"
+		},
+		{
+			"fisier":"poza8.png",
+			"descriere":"noutate",
+			"sfert_ora":"4"
+		},
+		{
+			"fisier":"poza9.png",
+			"descriere":"noutate",
+			"sfert_ora":"1"
+		},
+		{
+			"fisier":"poza10.png",
+			"descriere":"noutate",
+			"sfert_ora":"2"
+		}
+	]
+}

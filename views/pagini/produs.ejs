@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include("../fragmente/head.ejs") %>
+    <title>Nixxie DrugStore</title>
+    <meta name="keywords" content="drogherie, produse, cosmetice, pastile">
+    <meta name="description" content="Drogheria Nixxie">
+    <link href="/Resurse/css/produs.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<%- include("../fragmente/header") %>
+
+<main>
+    <section>
+        <article id="articol_<%- locals.prod.id %>" class="<%- locals.prod.categorie_produse.replace(/ /g, '') %>">
+            <h2><span class="nume"><%- locals.prod.nume %></span></h2>
+            <p class="categorie">Categorie: <%- locals.prod.categorie_produse %></p>
+            <div class="descriere-imagine">
+                <p class="descriere">Descriere: <span><%- locals.prod.descriere %> </span></p>
+                <figure class="imag-produs">
+                    <img src="/Resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]">
+                </figure>
+            </div>
+            <ul>
+                <li>Pret: <span class="pret"><%- locals.prod.pret %></span></li>
+                <li>Gramaj: <span class="gramaj"><%- locals.prod.cantitate %></span></li>
+                <li>Tipul produsului: <span class="tip_produs"><%- locals.prod.tipuri_produs %></span></li>
+                <li>Ingrediente: <span class="ingrediente"><%- locals.prod.ingrediente %></span></li>
+                <li>Origine: <span class="origine"><%- locals.prod.tip_origine %></span></li>
+                <li>Are reducere: <span class="reducere"><%- locals.prod.reducere ? 'Da' : 'Nu' %></span></li>
+                <li>Data adăugare: <time datetime="<%- new Date(locals.prod.data_adaugare).toISOString().split('T')[0] %>"><%- new Date(locals.prod.data_adaugare).toLocaleDateString('ro-RO', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %></time></li>
+            </ul>    
+        </article>
+    </section>
+</main>
+
+<%- include("../fragmente/footer") %>
+
+</body>
+</html>

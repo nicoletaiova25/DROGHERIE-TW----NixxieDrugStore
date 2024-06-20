@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!--Comentariu-->
+<html lang="ro">
+    <head>
+        <title>Nixxie DrugStore</title>
+        <meta charset="UTF-8"><!-- codificarea in memorie a caracterelor--> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- va fi explicat
+        dand ajungem la CSS -->
+        <meta name="keywords" content="drogherie, produse, cosmetice,
+        pastile,"><!--cuvintele cheie ale paginii; majoritatea motoarelor de cautare ignora
+        keywords -->
+        <meta name="description" content="Drogheria Nixxie"><!--
+        descrierea paginii, adesea apare sub link dänd sunt afigate rezultatele cutarii -->
+        <meta name="author" content="Nicoleta Iova">
+        <link rel="apple-touch-icon" sizes="180x180" href="./Resurse/ico/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./Resurse/ico/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./Resurse/ico/favicon-16x16.png">
+        <link rel="manifest" href="./Resurse/ico/site.webmanifest">
+        <link rel="mask-icon" href="./Resurse/ico/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#a6cee6">
+        <meta name="theme-color" content="#f5f5dc">
+        <!-- fisiere de stilizare-->
+        <!--<link rel = "stylesheet" href="Resurse/css/resetare.css" type="text/css"/>-->
+        <link rel = "stylesheet" href="Resurse/css/stil.css" type="text/css"/> <!--fisier pentru layout-->
+        <link rel="stylesheet" href="Resurse/css/general.css" type="text/css"/> <!--fisier de stil pentru elemente din pagina-->
+        <link rel="stylesheet" href="Resurse/css/nav.css" type="text/css"/> <!--fisier de stilizare a meniului pe ecran mare-->
+        <link rel="stylesheet" href="Resurse/css/nav1200.css" type="text/css" media="screen and (max-width:1200px) and (min-width:801px)"/> <!--fisier pentru stilizarea meniului pe ecran mediu-->
+        <link rel="stylesheet" href="Resurse/css/nav700.css" type="text/css" media="screen and (max-width:800px)"/> <!--fisier pentru stilizarea meniului pe ecran mic-->
+        <link rel="stylesheet" href="Resurse/css/printare.css" media="print" type="text/css"/> <!--fisier care contine cerintele pentru printare-->
+        <script src="https://kit.fontawesome.com/cab58391a4.js" crossorigin="anonymous"></script> <!--Script pentru utilizarea de iconuri-->
+        
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+            
+            .column {
+              float: left;
+              width: 16.66%;
+              padding: 5px;
+            }
+            
+            .row::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+            </style>
+    </head>
+
+    <body>
+
+        <!--Header = aici se afla meniul si titlul paginii-->
+        <header id="header">
+            <h1 id="site-name">Nixxie DrugStore</h1>
+            <nav>
+                <!--<label id="hamburger" for="ch-menu">
+                    <img src="Resurse/imagini/hamburger.png"  alt="menu">
+                </label>-->
+                
+                <label class="hamburger" for="ch-menu">
+                    <div id="hamb-top-line"></div>
+                    <div id="hamb-mid-line"></div>
+                    <div id="hamb-bot-line"></div>
+                    </label>
+                    <input id="ch-menu" type="checkbox">
+
+                    <ul class="meniu">
+                        <li>
+                            <div id="acasa"><i class="fa-solid fa-house"></i>Acasa</div>
+                            <div id="casuta"><i class="fa-solid fa-house"></i></div>
+                            <ul id="acasa_link">
+                                <li><a href="#noutati">Noutati</a></li>
+                                <li><a href="#reduceri">Reduceri si Promotii</a></li>  
+                                <li><a href="#vanzari">Top vanzari</a></li>
+                                <li><a href="#articole">Articole</a></li>
+                            </ul>
+                        </li>
+                    <li>
+                        <div>Produse</div>
+                        <ul>
+                            <li><a href="#">Produse make-up</a></li>
+                            <li><a href="#">Produse alimentare</a></li>
+                            <li><a href="#">Produse ingrijire personala</a></li>
+                            <li><a href="#">Medicamente</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>Contact și servicii clienți</div>
+                        <ul>                        
+                            <li><a href="#">Detalii locații</a></li>
+                            <li><a href="#">Formular de Contact</a></li>
+                            <li><a href="#">Întrebări frecvente</a></li>
+                            <li><a href="#">Politică retur și garanție</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>Despre noi</div>
+                        <ul>
+                            <li><a href="#">Istorie</a></li>
+                            <li><a href="#">Echipa Nixxie</a></li>
+                            <li><a href="#">Evenimente</a></li>
+                            <li><a href="#">Inspo</a></li>
+                        </ul>
+                    
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <!--Zona de main este impartita in zona de gridul paginii-->
+        <main>
+            <div id="grid-pagina">
+
+                <section id="zona1"> <!--In zona 1 se afla bannerul/ imaginea de greeting a siteului-->
+                    <img src="Resurse/imagini/bannerbun.png" title="Banner" alt="Banner" style="width: 100%;">
+                </section>
+                <br>
+
+                <section id="zona2"> <!--In zona 2 se afla tabelul-->
+                    <br>
+                    <br>
+                    <div id="container_tabel">
+                    <table class="tabel">
+                        <caption>Produsele lunii martie</caption>
+                        <thead>
+                            <tr class="rand">
+                                <td class="impar">Produsul lunii</td>
+                                <td class="par">Pret Produs</td>
+                                <td class="impar">Stoc</td>
+                                <td class="par">Numar stelute</td>
+                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="rand">
+                                <td class="impar">Produs 1</td>
+                                <td class="par">35 ron</td>
+                                <td class="impar">3 bucati</td>
+                                <td class="par">5</td>
+                                
+                            </tr>
+                            <tr class="rand">
+                                <td class="impar">Produs 2</td>
+                                <td class="par">27 ron</td>
+                                <td class="impar">5 bucati</td>
+                                <td class="par">4.6</td>
+                                
+                            </tr>
+                            <tr class="rand">
+                                <td class="impar">Produs 3</td>
+                                <td class="par">18 ron</td>
+                                <td class="impar">7 bucati</td>
+                                <td class="par">3.2</td>
+                            </tr>
+                            <tr class="rand">
+                                <td class="impar">Produs 4</td>
+                                <td class="par">27 ron</td>
+                                <td class="impar">2 bucati</td>
+                                <td class="par">4.3</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <td class="rand" colspan="4">Nixxie Drugstore   
+                            </td>
+                        </tfoot>
+                    </table>
+                </div>
+                </section>
+    
+
+                <section id="zona3"> <!--In zona 3 se afla Calendarul //momentan este un placeholder--> 
+                    <h2>CALENDAR</h2><i id="icons" class="fa-regular fa-calendar fa-bounce"></i>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Repudiandae asperiores reiciendis quae autem, saepe illum magnam in facere 
+                    possimus eos dolor ut ad tempore corrupti enim recusandae, praesentium officia? Amet?</p>
+                </section>
+
+                <section id ="zona4"> <!--In zona 4 sunt afisate anunturi-->
+                    <h2>Anunturi <i id="icons" class="fa-solid fa-pills fa-shake"></i></h2>
+                    
+                    <p><time datetime="2023-01-15">15 Ianuarie 2024</time> BLABLALDNIUDENFOIEUWRFOIU </p>
+                    <p><time datetime="2023-01-18">18 Ianuarie 2024</time> BLABLALDNIUDENFOIEUWRFOIU </p>
+                    <p><time datetime="2023-02-03">3 Februarie 2024</time> BLABLALDNIUDENFOIEUWRFOIU </p>
+                    <p><time datetime="2023-02-12">12 Februarie 2024</time> BLABLALDNIUDENFOIEUWRFOIU </p>
+                    <p><time datetime="2023-02-28">28 Februarie 2024</time> BLABLALDNIUDENFOIEUWRFOIU </p>
+                    <p><time datetime="2023-03-01">1 Martie 2024</time> BLABLALDNIUDENFOIEUWRFOIU </p>
+                      
+                </section>
+
+                <section id="zona5"> <!--In zona 5 este un placeholder pentru sectiunea de useri-->
+                    <h2> Text</h2>
+                    
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse impedit excepturi, labore fugit doloremque mollitia assumenda
+                     veritatis ad? Maiores exercitationem, quaerat eaque harum doloribus iusto nihil architecto voluptatem. Voluptates, ipsa!</p>
+                </section>
+
+                <section id="zona6"> <!--In zona 6 este un placeholder pentru sectiunea de date despre useri si statistici-->
+                    <h2>Text</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit quibusdam corporis id dicta a eius in quas quaerat omnis quasi, 
+                    numquam unde repudiandae doloremque dolorum quo at earum est tempore?</p>
+                </section>
+
+                <section id="zona7"> <!--In zona 7 este un placeholder pentru sectiunea de date despre site si server-->
+                    <h2>Text</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut laboriosam iusto adipisci repellendus blanditiis maiores dolore placeat,
+                     reiciendis beatae tenetur quaerat minus eveniet iure similique sapiente ipsa qui minima! At!</p>
+                </section>
+
+
+                <section id="zona8"> <!--Zona 8 contine diverse tipuri de continut (articole, poze, blog)-->
+
+                    <h2 id="noutati">Noutati</h2> <!--Parte de noutati-->
+                    <section >
+                        <div class="row-noutati">
+                            <div class="column-noutati">
+                        <h3>Noi optiuni vegane</h3>
+                            <section>
+                                <h4>Batoane vegane cu fructe confiate</h4>
+                                <figure>
+                                    <img class="poza-noutati" src="resurse/imagini/vegan_bar.jpg" alt="Batoane vegane" title="VeganBarre">
+                                    <figcaption>Batoane vegane</figcaption>
+                                </figure>
+                                <p>
+                                    <i><b>VeganBarre</b></i>, un nou brand cu produse vegane. Aceste batoane sunt perfecte pentru a fi luate cu tine oriunde ai merge.<br>
+                                        Batoanele vegane cu fructe confiate sunt o opțiune perfectă pentru oricine dorește să aibă o <em>gustare sănătoasă</em> între mese 
+                                        sau pentru a-și reîncărca bateriile înainte sau după antrenamente.
+                                </p>
+                                <details>
+                                    <summary>Descriere produs</summary>
+                                    <p>
+                                        <strong>VeganBarre</strong> sunt preparate din ingrediente de calitate superioară, cum ar fi fructele confiate, nuci, semințe, ovăz, miere de 
+                                        agave și unt de migdale, oferindu-ți o sursă naturală de energie.<br>
+        
+                                        Fructele confiate oferă un gust dulce și aromat, fără să adauge zahăr rafinat în batoane. Acestea sunt bogate în fibre și 
+                                        vitamine esențiale, care îți oferă un aport important de nutrienți.<br> Nucile și semințele adaugă textură și crocantă, în timp
+                                        ce untul de migdale oferă o cremozitate și o aromă delicioasă.<br>
+                                        Acestea sunt potrivite pentru toți cei care urmează un stil de viață vegan, fără gluten sau care doresc să evite produsele 
+                                        alimentare procesate și pline de zahăr.
+                                    </p>
+                                </details>
+                            </section>
+                        </div>
+                        <div class="column-noutati">
+                            
+                            <br>
+                                <h3>Mai multe pentru corpul tau</h3>
+                                 <section>
+                                    <h4>Un strop de catifea</h4>
+                                    <figure>
+                                        <img class="poza-noutati" src="resurse/imagini/scrub.jpg" alt="Scrub" title="ScrubIt">
+                                        <figcaption>Scrub</figcaption>
+                                    </figure>
+                                    <p>
+                                         <i><b>ScrubIt</b></i>, acum si in varianta de 300 de ml. ScrubIt este un produs de îngrijire a pielii, un scrub de corp care ajută 
+                                        la exfolierea și curățarea pielii. Acesta este fabricat cu ingrediente naturale și nu conține substanțe chimice dăunătoare.
+                                    </p>
+                                    <details>
+                                        <summary>Descriere produs</summary>
+                                        <p>
+                                            <strong>ScrubIt</strong> conține particule fine de zahăr brun, care ajută la îndepărtarea celulelor moarte ale pielii și a impurităților, lasand 
+                                            pielea mai catifelată și mai netedă. <br>De asemenea, acest scrub conține ulei de cocos, care hidratează și hrănește pielea, 
+                                            lăsând-o moale și catifelată.<br>
+        
+                                            <b>ScrubIt</b> poate fi folosit pe toate tipurile de piele și este ideal pentru persoanele care doresc să își mențină pielea curată și
+                                            catifelată. <br>Acesta poate fi utilizat de două-trei ori pe săptămână, în timpul dușului sau băii, prin aplicarea pe pielea umedă
+                                            și masajul cu mișcări circulare. După utilizare, pielea va fi netedă și strălucitoare.
+                                        </p>
+                                    </details>
+                                </section>
+                        </div>
+                        </div>
+                    </section>
+                    <br>
+
+                    <h2 id="vanzari">Top vanzari</h2> <!--Parte de top selling pe site-->
+                <section >
+                    <div class="row">
+                        <div class="column">
+                            <img src="resurse/imagini/Collagen.png" alt="Capsule cu collagen" 
+                            title="Capsule cu collagen Sparkle" style="width: 100%;">
+                        </div>
+                        <div class="column">
+                            <img src="resurse/imagini/CAELLI.png" alt="Comprimate pentru ficat" 
+                            title="Comprimate pentru ficat" style="width: 100%;">
+                        </div>
+                        <div class="column">
+                            <img src="resurse/imagini/SOPHARMA.png" alt="Fiole rusesti" 
+                            title="Fiole rusesti Sopharma" style="width: 100%;">
+                        </div>
+                        <div class="column">
+                            <img src="resurse/imagini/sirop.png" alt="Sirop pentru tuse" 
+                            title="Sirop pentru tuse" style="width: 100%;">
+                        </div>
+                        <div class="column">
+                            <img src="resurse/imagini/spray_gat.png" alt="Spray pentru gat" 
+                            title="Spray pentru gat" style="width: 100%;">
+                        </div>
+                        <div class="column">
+                            <img src="resurse/imagini/veverite.png" alt="Comprimate" 
+                            title="Comprimate ThroatSoft" style="width: 100%;">
+                        </div>
+                    </div>
+
+                </section>
+                    <h2 id="reduceri">Reduceri si promotii</h2> <!--Parte de Reduceri si promotii-->
+                    <section >
+                        <div class="row">
+                            <div class="column">
+                                <img src="Resurse/imagini/separator.png" alt="Organizator pastile" 
+                                title="Organizator pastile" style="width: 100%;">
+                                <details>Pret nou: 20 lei</details>
+                            </div>
+                            <div class="column">
+                                <img src="Resurse/imagini/diabet.png" alt="Aparat de masurat glicemia" 
+                                title="Aparat pentru masurarea glicemiei" style="width: 100%;">
+                                
+                                <a href="https://www.beurer.ro/manuale/manual-Beurer_glucometru-gl44.pdf"target="_blank" download>Link descarcare manual de utilizare</a>
+                                
+                                <details>Pret nou: 58 lei</details>
+                            </div>
+                            <div class="column">
+                                <img src="Resurse/imagini/pensule.png" alt="Set pensule profesionale" 
+                                title="Set pensule profesionale" style="width: 100%;">
+                                <details>Pret nou: 120 lei</details>
+                            </div>
+                            <div class="column">
+                                <img src="Resurse/imagini/capsule_vegane.png" alt="Capsule de origine vegana" 
+                                title="Capsule de origine vegana" style="width: 100%;">
+                                <details>Pret nou: 15 lei</details>
+                            </div>
+                            <div class="column">
+                                <img src="Resurse/imagini/vitaminaC.png" alt="Vitamina C" 
+                                title="Vitamina C" style="width: 100%;">
+                                <details>Pret nou: 17 lei
+                                    <p> Punem la dispozitie urmatoarea formula pentru a calcula doza normala pentru un adult</p>
+                                    <math>
+                                        <mrow>
+                                        <mi>Doza corecta</mi>
+                                        <mo>=</mo>
+                                        <mrow>
+                                            <mfrac>
+                                            <mrow>
+                                                <mi>Greutatea corporala</mi>
+                                                <mo>(</mo>
+                                                <mi>in kilograme</mi>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mrow>
+                                                <mi>Doza recomandata</mi>
+                                                <mo>(</mo>
+                                                <mi>in miligrame pe kilogram</mi>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            </mfrac>
+                                        </mrow>
+                                        </mrow>
+                                    </math>
+                                </details>
+                            </div>
+                            <div class="column">
+                                <img src="Resurse/imagini/stopfumatului.png" alt="Pastile antifumat" 
+                                title="Pastile antifumat" style="width: 100%;">
+                                <details>Pret nou: 10-30 lei<br> Pretul depinde de produsul</details>
+                            </div>
+                            
+                        </div>
+                    </section>
+
+                    <br>
+                    <h2 id="articole">Articole</h2> <!--Parte de Articole tip blog-->
+                    <section >
+                        <article>
+                            <h2>De ce ar trebui să alegeți produse naturale pentru îngrijirea pielii</h2><br><br>
+                            <details>
+                                <p>Vezi care sunt avantajele produselor naturale pentru diferite tipuri de piele si beneficiilor lor
+                                    in viata ta. Comparam cu produsele sintetice si cu substante chimice.<br> Salveaza mediul achizitionand 
+                                    produse naturale. Acestea sunt ecologice și mai sustenabile <br> decât cele sintetice, deoarece ingrediente naturale 
+                                    pot fi recoltate în mod sustenabil și nu necesită prelucrare chimică intensivă sau testarea pe animale.
+                                    <a href="https://www.sfatulmedicului.ro/Ingrijirea-pielii/ingrijirea-pielii-prin-metode-naturale_6143" target="_blank">Citeste mai multe aici</a> 
+                                    </p><br><br>
+                                    <q><i>O piele frumoasă necesită angajament, nu un miracol.</i> </q><p> — <b>Erno Laszlo</p></b><br><br>
+                                    <q><i>Nu vă bazați pe etichete pentru a vă oferi informațiile de care aveți nevoie. Ai încredere doar în lista de 
+                                    ingrediente și în instinctul tău.</i> </q><p>— <b>Liya Kebede</b></p><br><br>
+                              </details><br>
+                            <div class="container_iframe">
+                                <div class="tabs_video_iframe">
+                                    <iframe name="ifr-video" src="https://www.youtube.com/embed/0VwpOJp6CGY" width="560" height="315" frameborder="0" 
+                                    allow="autoplay;  picture-in-picture" allowfullscreen ></iframe>
+                                  </div>
+                                <div class="links_iframe">
+                                   <a href="https://www.youtube.com/embed/0VwpOJp6CGY" target="ifr-video">Videoclip 1</a>
+                               
+                                <a href="https://www.youtube.com/embed/3aUJYnodUgE" target="ifr-video" >Videoclip 2</a>
+                                <a href="https://www.youtube.com/embed/kbHPLdNQM5E" target="ifr-video" >Videoclip 3</a>
+                                </div>
+                               
+                          </div>
+                        
+                        
+                        </article>
+                        
+                        
+                        <article>
+                            <article>
+                                <h2>Cum să alegeți corect produsele pentru îngrijirea părului</h2><br><br><br>
+                                
+                                <details>
+                                    <p>Importanța alegerii produselor potrivite pentru îngrijirea părului în funcție de tipul acestuia și 
+                                        cum puteți îmbunătăți sănătatea și aspectul părului prin alegerile potrivite.<br>
+                                        Ofera o ingrijire aparte scalpului tau si stimuleaza cresterea si revitalizarea parului. </p><br>
+                                        <q><i>Părul meu nu ține bine la instrucțiuni.</i></q> <p> — <b>Leigh Bardugo</b></p><br><br>
+                                        <q><i>Părul meu crescuse lung și zdruncinat - nu în felul ăla sexy-tânăr-star-rock, ci în felul ăsta de timp pentru al duce-Rover-la-groomer.</i> </q><p>— <b>Jim Butcher</b></p>
+                                        <br><br>
+                                  </details><br><br>
+                                <div class="container_iframe">
+                                <div class="tabs_video_iframe">
+                                  <iframe  name="ifr-video1"  src="https://www.youtube.com/embed/JQET46N7kWg" width="560" height="315" frameborder="0" 
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="links_iframe">
+                                    <a  href="https://www.youtube.com/embed/JQET46N7kWg" target="ifr-video1">Videoclip 1</a>
+                                 
+                                     <a  href="https://www.youtube.com/embed/juMbMwFzBDI" target="ifr-video1" >Videoclip 2</a>
+                                     <a  href="https://www.youtube.com/embed/wClbriM0TmE" target="ifr-video1" >Videoclip 3</a>
+                                 </div>
+                               </div>
+                              
+                              </article>
+                        </article>
+                
+                    
+                    </section>
+            </section>
+
+        </div>
+        </main>
+
+        <footer id="footer">
+            <div class="banner-printare">
+                Acesta este un proiect școlar!
+              </div>
+            <address>
+                <a href="#" class="link-top">
+                    <div class="triangle"></div>
+                    <span class="tooltip">Top</span>
+                  </a>
+            <address>
+                <p>
+                    <i id="icons" class="fa-solid fa-phone "></i>
+                    <a href="tel:+40786610007003">You can contact us Mobile phone</a>
+                </p>
+                <p>
+                    <i id="icons" class="fa-sharp fa-solid fa-location-dot fa-beat-fade"></i>
+                    <a href="https://www.google.com/maps/place/Facultatea+de+Matematic%C4%83+%C8%99i+Informatic%C4%83/@44.4355355,26.097398,17z/data=!3m1!4b1!4m5!3m4!1s0x40b1ff472f47f047:0x493984726f0235f9!8m2!3d44.4355355!4d26.0995867">Our location</a>
+                </p>
+            <p>
+                <i id="icons" class="fa-regular fa-envelope"></i>
+                <a href="mailto:nixxie_drugstore@gmail.com">Our Mail</a>
+            </p>
+            <p>
+                <i id="icons" class="fa-brands fa-whatsapp fa-beat-fade"></i>
+                <a href="https://wa.me/+40786610007003">Chat on Whatsapp</a>
+                </p>
+            </address>
+            <br/>
+            <small>&copy;https://pixabay.com/</small>
+            <small>&copy;Canva</small>
+            <time datetime="2024-02-27">27 Februarie 2024</time>
+            </address>
+            <div id="watermark">Iova <br> Nicoleta</div>
+        </footer>
+    </body>
+</html>

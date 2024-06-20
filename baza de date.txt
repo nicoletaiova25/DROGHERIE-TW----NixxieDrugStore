@@ -1,0 +1,46 @@
+DROP TYPE IF EXISTS categ_produs;
+DROP TYPE IF EXISTS tip_produs;
+DROP TYPE IF EXISTS origini_produs;
+
+CREATE TYPE categ_produs AS ENUM ('cosmetice', 'alimente', 'ingrijire', 'medicamente', 'alte produse');
+CREATE TYPE tip_produs AS ENUM ('ten', 'ochi', 'par', 'buze', 'piele', 'pastila', 'sirop', 'sanatate', 'accesorii', 'alimentar', 'N/A');
+CREATE TYPE origine AS ENUM ('bio', 'vegan', 'alergeni', 'natural', 'eco', 'organic', 'cruelty-free', 'reciclabil', 'laborator');
+
+CREATE TABLE IF NOT EXISTS articole(
+	id serial PRIMARY KEY,
+	nume VARCHAR(100) UNIQUE NOT NULL,
+	descriere TEXT,
+	pret NUMERIC(8,2) NOT NULL,
+	cantitate INT NOT NULL CHECK (cantitate>=0),
+	categorie_produse categ_produs DEFAULT 'alte produse',
+	tipuri_produs tip_produs DEFAULT 'N/A',
+	tip_origine origine,
+	ingrediente VARCHAR [],
+	imagine VARCHAR(300),
+	data_adaugare TIMESTAMP DEFAULT current_timestamp,
+	boolean reducere DEFAULT false
+);
+
+INSERT INTO articole(nume, descriere, pret, cantitate, categorie_produse, tipuri_produs, tip_origine, ingrediente, imagine)
+VALUES
+('BB Cream', 'Crema pigmentata potrivita pentru orice tip de ten', 29.99, 50, 'cosmetice', 'ten', 'vegan', '{"talc", "ulei", "apa", "argila"}', 'bbcream.png'),
+('Sampon pentru volum', 'Creat special pentru parul lipsit de viata si volum', 42.25, 750, 'ingrijire', 'par', 'cruelty-free', '{"zinc", "parfum", "extract de rozmarin"}', 'sampon.png'),
+('Brufen', 'Medicament pentru durere', 13.99, 400, 'medicamente', 'pastila', 'laborator', '{}', 'capsule.jpg'),
+('Ruj mat', 'Ruj mat cu o gama larga de culori', 22.99, 30, 'cosmetice', 'buze', 'vegan', '{}', 'lipstick.jpg'),
+('Snack cu migdale', 'Snacks-ul favorit al tuturor in orice moment', 7.89, 250, 'alimente', 'alimentar', 'organic', '{"faina", "lapte", "migdale"}', 'oats.jpg'),
+('Antibiotic', 'Medicament pentru gripa', 30.00, 600, 'medicamente', 'pastila', 'laborator', '{}', 'antibiotic.jpg'),
+('Pachet de calatorie', 'Special conceput cu tot ce ai nevoie atunci cand calatoresti', 64.99, 100, 'ingrijire', 'N/A', 'reciclabil', '{}', 'calatorie.jpg'),
+('Creme hidratare si reparare', 'Un set special creat pentru a repara problemele tenului si a hidrata si lumina pielea', 39.99, 200, 'ingrijire', 'piele', 'natural', '{"extract de lavanda", "acizi", "minerale"}', 'clinique.jpg'),
+('Antihistaminice', 'Pastile anti-alergie care nu dau somnulenta', 9.99, 100, 'medicamente', 'pastila', 'laborator', '{}', 'contraceptive.jpg'),
+('Cereale din ovaz', 'Cereale din ovaz atent ales', 6.49, 300, 'alimente', 'alimentar', 'bio', '{"ovaz"}', 'granola.jpg'),
+('Iluminator', 'Confera tenului un aspect luminos si stralucitor', 26.99, 20, 'cosmetice', 'ten', 'vegan', '{"pigmenti", "sclipici", "stearat de magneziu"}', 'iluminator.jpg'),
+('Masca cu argila verde', 'Argila verde este un ingredient esential pentru intretinerea tenului, fiind bogata in nutrienti si minerale', 4.99, 35, 'ingrijire', 'ten', 'laborator', '{"argila verde", "sulfati"}', 'masca_faciala.jpg'),
+('Biscuiti digestivi', 'Biscuiti creati atent din fibre si ingrediente naturale special pentru a-ti incepe dimineata in forta', 12.49, 100, 'alimente', 'alimentar', 'bio', '{"grau", "ovaz", "lapte", "unt"}', 'meal.jpg'),
+('Miere de manuka', 'Miere rafinata exclusiv din flori de manuka natural polenizate', 79.99, 75, 'alimente', 'alimentar', 'natural', '{"miere"}', 'miere.jpg'),
+('Mini set pensule de machiaj', 'Exact cate ai nevoie, pentru orice utilizezi: fard, fond de ten, pudra, eyeliner', 44.99, 4, 'alte produse', 'accesorii', 'eco', '{}', 'pensule.png'),
+('Masca de buze', 'Bogata in uleiuri esentiala, aceasta masca e tot ce ai nevoie pentru a conferi buzelor tale aspectul mult visat', 17.99, 25, 'cosmetice', 'buze', 'vegan', '{}', 'ulei.jpg');
+
+CREATE USER nixxie WITH ENCRYPTED PASSWORD 'nixxie';
+GRANT ALL PRIVILEGES ON DATABASE drogherie TO nixxie;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO nixxie;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO nixxie;

@@ -1,0 +1,71 @@
+#ch-menu {
+    display: none;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 5px;
+    background-color: black;
+    margin: 3px;
+    border-radius: 9999px;
+  }
+
+#acasa{
+    display: none;
+}
+
+#casuta{
+    display: block;
+}
+
+  .meniu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+    color: #fff;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.5s ease;
+  }
+
+  #ch-menu:checked + .meniu {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .meniu ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .meniu li {
+    position: relative;
+  }
+
+  .meniu li > div {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .meniu li ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #444;
+  }
+
+  .meniu li:hover > ul {
+    display: block;
+  }
+
+  .meniu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+  }

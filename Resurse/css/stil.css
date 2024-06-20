@@ -1,0 +1,173 @@
+/* in stil.css se afla layoutul paginii si detalii legate de ecranele mai mici*/
+header{
+    --header-color: #eee7d9;
+}
+
+main{
+    --main-color: #f6e7df;
+    --border-color-custom: #F5869D;
+    --highlight-color:  #a61f1f;
+    overflow-x: hidden;
+  /* background-image: url(/Resurse/imagini/fundal1.jpg);
+        
+    background-attachment: fixed;
+    background-size: cover;
+    
+    transition: background-image 10s;
+    animation-name: change-bg;
+    animation-duration: 50s; 
+    animation-iteration-count: infinite;
+    z-index: 9999;*/
+}
+
+/*@keyframes change-bg {
+  0% {
+    background-image: url(/Resurse/imagini/fundal1.jpg);
+    background-size:auto;
+  }
+  50% {
+    background-image: url(/Resurse/imagini/fundal2.jpg);
+    background-size:contain;
+  }
+  100% {
+    background-image: url(/Resurse/imagini/fundal1.jpg);
+    background-size:auto;
+}
+}*/
+
+
+footer{
+    --footer-color: #e7e1d6;
+    border: 2px solid rgb(197, 113, 197);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+body{
+    /*background-color: rgb(234, 229, 229);*/
+    --spatiere: 25px;
+    --spatiere-mediu: 15px;
+    --spatiere-mic: 5px;
+    padding-left: var(--spatiere);
+    padding-right: var(--spatiere);
+    --padding-text: 5px;
+}
+
+:root{
+    --highlight-color:  #a61f1f;
+    --background-main-color: #f6e7df;
+    --pretty-border-color: rgb(197, 105, 197);
+    --padding-intern: 10px;
+    --selected-text-color: #fff; /* Culoarea textului selectat */
+    --selected-background-color: #000; /* Culoarea fundalului textului selectat */
+    --padd-main: 20px;
+    --evid-color: rgb(240, 174, 191);
+    --cl-marcare: pink;
+}
+
+#grid-pagina{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "z-1 z-1 z-1 z-1"
+                         "z-3 z-2 z-2 z-4"
+                         "z-5 z-2 z-2 z-4"
+                         "z-5 z-6 z-6 z-7"
+                         "z-8 z-8 z-8 z-8";
+}
+
+#grid-pagina>*{
+    border: 0.5px solid var(--border-color-custom);
+    background-color: var(--main-color);
+}
+
+#zona1{
+    grid-area: z-1;
+    background-color: var(--main-color);
+    box-shadow: 0px 0px 10px 5px rgba(0 ,0, 0, 0.5);
+}
+
+#zona2{
+    grid-area: z-2;
+    background-color: var(--main-color);
+    border: 4px solid var(--pretty-border-color);
+}
+
+#zona3{
+    grid-area: z-3;
+    background-color: var(--main-color);
+    padding: var(--padding-text);
+}
+
+#zona4{
+    grid-area: z-4;
+    background-color: var(--main-color);
+    padding: var(--padding-text);
+}
+
+#zona5{
+    grid-area: z-5;
+    background-color: var(--main-color);
+    padding: var(--padding-text);
+}
+
+#zona6{
+    grid-area: z-6;
+    background-color: var(--main-color);
+    padding: var(--padding-text);
+}
+
+#zona7{
+    grid-area: z-7;
+    background-color: var(--main-color);
+    padding: var(--padding-text);
+}
+
+#zona8{
+    grid-area: z-8;
+    background-color: var(--main-color);
+}
+
+#header{
+    background-color: var(--header-color);
+}
+
+#footer{
+    background-color: var(--footer-color);
+}
+
+@media screen and (max-width: 1200px){
+    html{
+        font-size: 15px;
+    }
+
+    body{
+        padding-left: var(--spatiere-mediu);
+        padding-right: var(--spatiere-mediu);
+    }
+
+    #grid-pagina{
+        gap: 3px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "z-1 z-1 z-1"
+                             "z-3 z-2 z-4"
+                             "z-5 z-2 z-4"
+                             "z-5 z-6 z-7"
+                             "z-8 z-8 z-8";
+    }
+}
+
+@media  screen and (max-width:800px) {
+    html{
+        font-size: 12px;
+    }
+    body{
+        padding-left: var(--spatiere-mic);
+        padding-right: var(--spatiere-mic);
+    }
+    #grid-pagina{
+        display: block;
+        gap: 1px;
+    }
+}
+

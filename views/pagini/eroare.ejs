@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <%- include("../fragmente/head.ejs") %>
+        <title>Nixxie DrugStore</title>
+        <meta name="keywords" content="drogherie, produse, cosmetice,
+        pastile,"><!--cuvintele cheie ale paginii; majoritatea motoarelor de cautare ignorakeywords -->
+        <meta name="description" content="Drogheria Nixxie"><!--
+        descrierea paginii, adesea apare sub link dänd sunt afigate rezultatele cutarii -->
+        <link rel = "stylesheet" href="Resurse/css/eroare.css" type="text/css"/> <!--fisier pentru eroare-->
+    </head>
+    <body>
+        
+    <%- include("../fragmente/header.ejs");  %> 
+
+    <main>
+        <div id="err-coloane">
+			<div id="err-imag">
+				<img src="<%- locals.imagine %>" />
+			</div>
+			<section>
+				<h2><%- locals.titlu %></h2>
+				<p><%- locals.text %></p>
+			</section>
+		</div>
+    </main>
+    
+    <%- include("../fragmente/footer.ejs");  %> 
+
+
+    </body>
+</html>

@@ -1,0 +1,81 @@
+h2 {
+    padding: 0.4rem;
+}
+
+article {
+    margin: 0 auto;
+    width: 70%;
+    background-color: var(--background-main-color);
+    box-shadow: 0px 0px 0.8rem 0.3rem var(--evid-color),
+                0.1em -0.1em 0.1em 0.1em rgba(0, 0, 0, 0.2),
+                -0.1em 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.2),
+                0.1em -0.1em 0.1em 0.1em rgba(0, 0, 0, 0.2);
+    padding: 0.4rem;
+    overflow: hidden;
+}
+
+article p,
+article ul {
+    margin: 0;
+    padding: 0.4rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+article h2,
+article p.categorie {
+    text-align: center;
+}
+
+article p span,
+article ul span {
+    font-weight: normal;
+}
+
+.descriere-imagine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem;
+}
+
+.descriere-imagine .descriere {
+    width: 60%;
+}
+
+.descriere-imagine .imag-produs {
+    width: 35%;
+    text-align: center;
+}
+
+.imag-produs img {
+    width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li:nth-of-type(even) {
+    background-color: var(--footer-color);
+}
+
+ul li:nth-of-type(odd) {
+    background-color: var(--cl-marcare);
+}
+
+@media screen and (max-width: 700px) {
+    article {
+        width: 95%;
+    }
+
+    .descriere-imagine {
+        flex-direction: column;
+    }
+
+    .descriere-imagine .descriere,
+    .descriere-imagine .imag-produs {
+        width: 100%;
+    }
+}

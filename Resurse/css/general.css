@@ -1,0 +1,595 @@
+/*in general.css se va afla stilizarea unor elemente specifice din pagina, cum ar fi butonul de link top, tabelul 
+si diverse taskuri*/
+
+/*numele de inceput al site ului*/
+#site-name{
+  background-color: #000000;
+  color: white;
+  width: auto;
+  text-align: center;
+  height: 50px;
+}
+
+/*stil la randul de poze*/
+img {
+  border: 5px solid var(--pretty-border-color)
+}
+
+/*asezarea in pagina a noutatilor*/
+.column-noutati {
+    float: left;
+    width: 50%;
+    padding: 30px;
+    border-style: groove;
+    border-color: var(--pretty-border-color);
+  }
+  
+  .row-noutati::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+/*stilizarea linkurilor*/
+a{
+  color:black;
+}
+
+a[href^="http"]::before {
+  content: "⮳";
+  font-size: 1.5em; /* 50% mai mare decât dimensiunea fontului linkului */
+}
+
+a[href^="http"]:hover::before {
+  color: rgb(232, 100, 125); /* culoarea când cursorul este deasupra */
+}
+
+a[href^="http"]{
+  background-image: radial-gradient(circle at center, #9b4c63 0%,#b38396 40%, transparent 80%, transparent 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0;
+  transition: background-size 1s ease-in;
+}
+
+/* Cresterea la 100% a imaginii de background la aducerea cursorului pe link */
+a:hover {
+  background-size: 100%;
+}
+
+/* Efectul de border la click pe un link */
+a:active {
+  outline: 2px solid var(--highlight-color);
+}
+
+  /* task link-top */
+.link-top{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    rotate:-45deg;
+    background-color: #e09bb1;
+    transition: background-color 0.3s ease-out;
+    opacity: 0.8;
+    z-index: 9999;
+    text-decoration: none;
+    border: 2px solid purple;
+    opacity: 0.3;
+    }
+    
+    /* triunghiul */
+    .triangle {
+    bottom: 11.5px;
+    right:  11.5px;
+    border-radius: 75px 75px;
+    position: absolute;
+    rotate:-45deg;
+    line-height: 10;
+    border-style: solid;
+    border-width: 20px 0 20px 30px;
+    border-color: transparent transparent transparent  var(--highlight-color);
+    }
+    
+    /* textul tooltip-ului */
+    .tooltip {
+    position: absolute;
+    rotate: 45deg;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #000000;
+    padding: 6px 12px;
+    font-size: 12px;
+    
+    border-radius: 3px;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    }
+    
+    /* efectul de hover */
+    .link-top:hover {
+    background-color: #ecb2b2;
+    opacity: 1;
+    border-color: #f591ad;
+    opacity: 1;
+    }
+    
+    .link-top:hover .triangle {
+    border-color: transparent transparent transparent #fff;
+    }
+    
+    .link-top:hover .tooltip {
+    opacity: 1;
+    }
+    #top{
+    overflow: hidden;
+    animation: animate 2s linear forwards;
+    }
+
+    /*definirea si atribuirea fonturilor externe*/
+@font-face{
+  font-family: "customFont";
+  src: url(font1/Comfortaa-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+  
+  font-family: "customDancing";
+  src: url(font2/DancingScript-VariableFont_wght.ttf) format("truetype");
+  font-weight: normal;
+}
+
+h2{
+  font-family: "customFont";
+  color: #410949;
+}
+
+
+h3{
+  font-family: "customDancing", sans-serif;
+  color: #5a2489;
+  font-size: 30px;
+}
+
+/*likurile iframe*/
+.links_iframe > a{
+  border: 5px groove;
+  border-color: rgb(231, 94, 231);
+  border-radius: 0 0 8px 8px;
+  color:black;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  background: peachpuff;
+  transition: all 100ms linear;
+}
+
+.links_iframe a:hover{
+  color:black;
+  background-color: #d68e8e;
+}
+
+.container_iframe{
+  display: flex;
+  flex-direction: column;
+  width:fit-content;
+  justify-content: center;
+  margin-left: 30%;
+}
+
+.tabs_video_iframe{
+  border: 5px groove;
+  border-color: rgb(231, 94, 231);
+  border-radius: 8px 8px 8px 8px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+#iframe{
+  position: absolute;
+  overflow: hidden;
+}
+
+.links_iframe{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+/*Task stilizare tabel*/
+table {
+  margin: auto;
+  border-collapse: collapse;
+  border:solid black 1px;
+  
+  /*border-collapse:separate;*/
+  border-radius:6px;
+  -moz-border-radius:6px;
+  width: 200px;
+  height:200px;
+  border-collapse: separate; /*separam bordurile*/
+  border-spacing: 4px; /* punem spatiu intre bordurile coloanelor */
+
+}
+
+thead {
+  border-bottom: 5px solid purple; /* bordura care delimiteaza thead de tbody*/
+  .par{
+    background-color: pink;
+  }
+  .impar{
+    background-color: pink;
+  }
+}
+
+.par{
+background-color: pink;
+border: solid;
+border-color: #5a2489;
+border-left-color: black;
+border-right-color: purple;
+}
+.impar{
+background-color: lightcoral;
+border: solid;
+border-color: #5a2489;
+border-left-color: black;
+border-right-color: purple;
+border-width: 3px;
+}
+
+table td:hover{
+background-color: rgb(224, 172, 181);
+}
+
+td:hover {
+background-color: #ce9398;
+color: white;
+}
+
+td:hover ~ td {
+background-color: #eaafc0;
+}
+
+tr {
+  transition: box-shadow 0.5s ease; /* box-shadow pe rand */
+}
+
+tr:hover {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5); /* tranzitia de box shadow la hover */
+}
+
+tfoot{
+  border-top: 5px solid purple; /* Putem alege orice grosime dorim */
+  width: 500px;
+  height: 50px;
+  text-align: center;
+}
+td, th {
+  padding: 8px; /* am spatiat continutul fata de marginea celulei*/
+}
+
+#container_tabel {
+
+overflow-x: auto; /* seteaza scrollbarul orizontal */
+max-width: 100%;
+}
+caption { 
+display: table-caption;
+caption-side:bottom;
+text-align: center;
+
+}
+
+video { /*setarea de maxime si minime pentru elemente video*/
+  max-width: 800px;
+  max-height: 800px;
+  width: auto;
+  height: auto;
+  min-height: 200px;
+  min-width: 250px;
+}
+
+
+video{
+  width: 100%;
+  max-width: 50rem;
+  min-width: 10rem;
+}
+
+ /*stilizarea formulei matematice*/
+
+ math{
+  background-color: #a584cf;
+  width: 400px;
+}
+
+  /* Stilizarea textului bold */
+  math mi {
+    font-weight: bold;
+  }
+
+  /* Stilizarea textului italic */
+  math mo {
+    font-style: italic;
+  }
+
+  /* Stilizarea culorii textului */
+  math mi:nth-child(1),
+  math mi:nth-child(3) {
+    color: #cf04ad;
+  }
+
+  math mi:nth-child(2),
+  math mo {
+    color: white;
+  }
+
+.poza-noutati{
+  width: 300px;
+  height: auto;
+}
+
+/*Bannerul pentru printare*/
+.banner-printare{
+  display: none;
+}
+
+#watermark{
+  display: none;
+}
+
+
+
+.video_subtr{
+  text-align: center;
+}
+/*subtitrarile pentru video*/
+::cue{
+  background-color: var(--background-main-color);
+  opacity: 0.5;
+  color: purple;
+}
+
+/*stilizare hr*/
+hr {
+  height: 50px;
+  border-radius: 5px;
+  background-image: radial-gradient(white 10%, #88296a 35%, transparent 10%),
+      radial-gradient(white 10%, #ca70ae 35%, transparent 10%),
+      radial-gradient(white 10%, #740752 35%, transparent 10%);
+  background-size: 16px 16px;
+  background-repeat: repeat-x;
+  position: relative;
+  border: 0;
+  filter: blur(0.4px);
+}
+
+hr::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background-image: radial-gradient(white 1%, #844069 55%, transparent 1%);
+  background-size: 16px 16px;
+  background-repeat: repeat-x;
+  background-position-x: 12px;
+  top: 8%;
+  filter: blur(0.6px);
+}
+
+hr::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background-image: radial-gradient(white 10%, #751053 35%, transparent 30%);
+  background-size: 16px 16px;
+  background-repeat: repeat-x;
+  top: 15%;
+  background-position-x: -10px;
+  filter: blur(0.4px);
+}
+
+/*schimbare text selectat*/
+::selection {
+  color: var(--selected-text-color);
+  background-color: var(--selected-background-color);
+}
+
+.text-scroll {
+ 
+  white-space: nowrap; /* Asigura afisarea pe o singura linie */
+  overflow: hidden; /* Ascunde textul care depaseste elementul */
+  animation: scroll 10s linear infinite; /* Aplica animatia */
+  font-family: "customFont";
+}
+.text-miscator{
+  width: 100%;
+  background-color: whitesmoke;
+  overflow: hidden;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Se seteaza numarul de coloane pentru text */
+.coloane-text {
+  column-count: 2; /* Aici se seteaza numarul de coloane */
+  column-gap: 20px; /* Setam spatiul dintre coloane */
+  column-rule: 1px solid black; /* Linie de separare intre coloane */
+}
+
+  /*efect css cu duotone */
+  #imagine{
+    position:relative;
+    background-image:url("/Resurse/imagini/Collagen.png");
+    background-size:cover;
+	  width:100%; 
+	  height: auto;
+    transition:all 2s ease-in-out;
+	 
+}
+#imagine:before,
+#imagine:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+  transition:all 2s ease-in-out;
+}
+
+#imagine:before {
+  background-color: rgb(216, 203, 197); /* primul ton */
+  mix-blend-mode: multiply;
+}
+
+#imagine:after {
+  background-color: rgb(239, 228, 228); /* al doilea ton */
+  mix-blend-mode: darken;
+}
+
+
+#imagine:hover{
+  filter: grayscale(100%);
+  transition: all 2s ease-in-out;
+}
+#imagine:hover:after, #imagine:hover:before{
+  opacity: 0;
+  transition: all 2s ease-in-out;
+
+}
+
+#text-reflectat{
+	position:relative;
+  text-align: start;
+	left:0;
+	top:100%;
+	transform-origin:0 0;
+	/*conetaza ordinea transformarilor!*/
+	transform: rotateX(180deg) skew(-40deg) scaleY(0.5) translate(10px,-25px); 
+  opacity:0.55;
+  text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+
+  filter: blur(2px); /* Ușor blurată */
+    transition: all 0.3s ease-in-out;
+}
+#text:hover #text-reflectat {
+  transform: rotateX(180deg) skew(-40deg) scaleY(1) translate(10px, -25px); /* Se alungește la hover */
+}
+
+
+#text{	
+	position:relative;
+  text-align: start;
+  text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+
+}
+
+#text, #text-reflectat{
+  
+	font-size:24px;
+	line-height:24px;
+	font-weight: bold;
+}
+
+/* Media query pentru ecrane mai mici de 1000px */
+@media (max-width: 1000px) {
+  .coloane-text {
+      column-count: 1; /* Afisam o singura coloana pe ecrane mici si medii */
+      column-rule: none; /* Nu afisam linia de separare pe ecrane mici si medii */
+  }
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
+/*Stilizari anume pentru ecranul mediu*/
+@media screen and (max-width: 1200px) {
+  .container_iframe{
+    width: fit-content;
+    margin-left: 15%;
+  }
+  .tabs_video_iframe{
+    display: flex;
+    justify-content: center;
+  }
+
+  .poza-noutati{
+    width: 100px;
+    height: auto;
+  }
+  
+}
+
+/*Stilizari anume pentru ecranul mic*/
+@media screen and (max-width: 800px){
+  .container_iframe{
+    width: auto;
+    margin-left: 0%;
+  }
+  .tabs_video_iframe{
+    display: flex;
+    justify-content: left;
+  }
+  #iframe{
+    position:absolute;
+    width: 20%;
+  }
+  .poza-noutati{
+    width: 70px;
+    height: auto;
+  }
+
+  h3{
+    font-size: 20px;
+  }
+}
+
+.btn{
+  color: black;
+  border-color: var(--pretty-border-color);
+}
+
+/* Stilizează switch-ul */
+.form-check-input {
+  width: 50px;
+  height: 25px;
+  margin-left: 0;
+}
+
+/* Stilizează iconul */
+#theme-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  border-style: none;
+}
+
+
+/* CSS pentru tema întunecată */
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
