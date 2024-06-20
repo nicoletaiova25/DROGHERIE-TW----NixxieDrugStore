@@ -14,7 +14,7 @@ Be welcomed to Nixxie DrugStore 🌿✨ where everything you're looking for is s
 ### Nixxie DrugStore 🌿✨ - General Description 🍄
 
 <p>Welcome to Nixxie DrugStore🌿✨, your one-stop shop for everything you need, beautifully designed in one place! 
-  The site is a comprehensive platform developed for the Web Techniques course, utilizing JavaScript, Node.js, Bootstrap, JSON, HTML, CSS, and pgAdmin database. 
+  The site is a comprehensive platform developed for the Web Techniques course, utilizing JavaScript, Node.js, Bootstrap, JSON, EJS, HTML, CSS, SCSS and pgAdmin database. 
   We are excited to offer a feature-rich and user-friendly experience.</p>
 </details>
 
@@ -41,8 +41,10 @@ Be welcomed to Nixxie DrugStore 🌿✨ where everything you're looking for is s
       <li><b>Node.js</b>: To handle server-side operations.</li>
       <li><b>Bootstrap</b>: For responsive and modern design.</li>
       <li><b>JSON</b>: To manage data interchange.</li>
+      <li><b>EJS</b>: For templating and generating dynamic HTML.</li>
       <li><b>HTML</b>: As the backbone of our webpage structure.</li>
       <li><b>CSS</b>: To style and beautify our website.</li>
+      <li><b>SCSS</b>: For enhanced styling, compiled automatically to CSS.</li>
       <li><b>pgAdmin</b>: For database management and interactions.</li>
     </ul>
 </details>
