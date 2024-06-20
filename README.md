@@ -53,21 +53,21 @@ Be welcomed to Nixxie DrugStore 🌿✨ where everything you're looking for is s
   </summary>
     <p>We strive to provide an intuitive and seamless user experience. Our site is designed to be user-friendly and accessible, ensuring that users of all levels can navigate and utilize our features with ease.</p>
 
-    <h3>Registration and Profile Management 🔐</h3>
+  <h3>Registration and Profile Management 🔐</h3>
 
-    <ul>
+  <ul>
       <li><b>Register</b>: Users can quickly sign up and receive a confirmation email to verify their account.</li>
       <li><b>Login</b>: Secure login to access personalized features.</li>
       <li><b>Profile Management</b>: Users can view and edit their profiles, keeping their information up-to-date.</li>
       <li><b>Account Deletion</b>: Users have the option to delete their accounts at any time.</li>
       <li><b>Logout</b>: Easily log out of the account when needed.</li>
-    </ul>
+  </ul>
 
-    <h3>Product Exploration and Filtering 🔎</h3>
+  <h3>Product Exploration and Filtering 🔎</h3>
 
-    <p>Our product page is designed to make it easy for users to find exactly what they're looking for. Advanced filtering options allow users to search for products based on various criteria, ensuring they can find products that meet their needs.</p>
+  <p>Our product page is designed to make it easy for users to find exactly what they're looking for. Advanced filtering options allow users to search for products based on various criteria, ensuring they can find products that meet their needs.</p>
 
-    <ul>
+  <ul>
       <li><b>Search by Name</b>: Find products by entering the name 🔎.</li>
       <li><b>Keyword Search</b>: Search for products using keywords in the description 🔎.</li>
       <li><b>Category Selection</b>: Choose from a variety of categories 💮.</li>
@@ -78,7 +78,7 @@ Be welcomed to Nixxie DrugStore 🌿✨ where everything you're looking for is s
       <li><b>Ingredients</b>: Search for products based on their ingredients 🌿.</li>
       <li><b>Discount Status</b>: Easily find products that are on sale 🦩.</li>
       <li><b>Sorting Options</b>: Sort products by price and name, in ascending or descending order ⬆️⬇️.</li>
-    </ul>
+  </ul>
 </details>
 
 <h2>Conclusion 🌟</h2>
